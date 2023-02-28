@@ -1,0 +1,15 @@
+<h3>BRowse sidebar</h3>
+<hr>
+
+<div>
+    <div>
+        <a href="{% url 'home' %}">All</a>
+    </div>
+
+    {% for topic in topics %}
+    <div>
+        <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
+    </div>
+    {% endfor %}
+
+</div>
