@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div>
+    
+    <form method="POST" action="" >        <!-- method= post signifies that we are sending data, for creating and updating  #action decides which url u should go to and blank means current page -->
+
+        {% csrf_token %}   <!-- csrf_token ensures that the user can do anything malicious with our input and is mostly used with csrf_token -->
+        {{form.as_p}}       <!-- as_p gives a paragraph tag to every input making it appear one component after the other below each one    -->
+        <input type="submit" value="Submit" />  <!-- value is the actual text in the button -->
+
+    </form>
+</div>
+
+
+
+{% endblock content %}
