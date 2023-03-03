@@ -52,8 +52,8 @@ def registerPage(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=False)
-            user.username = user.username.lower()
+            user = form.save(commit=False)  #commit is set to false so tht it is not automatically updated, this is done so that we can clean things like username using lower()
+            user.username = user.username.lower()   
             user.save()
             login(request, user)
             return redirect('home')
